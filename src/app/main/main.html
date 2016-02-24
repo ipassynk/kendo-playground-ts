@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">Add my git profile here</div>
+    <div class="col-lg-8">Add my git chart</div>
+  </div>
+
+  <div kendo-list-view id="listView" k-data-source="main.kendoSource" class="row">
+    <div k-template class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="assets/images/{{ dataItem.logo }}" alt="{{ dataItem.title }}">
+        <div class="caption">
+          <h3>{{ dataItem.title }}</h3>
+          <p>{{ dataItem.description }}</p>
+          <p><a ng-href="{{dataItem.url}}">{{ dataItem.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
