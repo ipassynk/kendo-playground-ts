@@ -8,6 +8,8 @@ import { GithubContributor } from '../app/components/githubContributor/githubCon
 import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service';
 import { acmeNavbar } from '../app/components/navbar/navbar.directive';
 import { acmeMalarkey } from '../app/components/malarkey/malarkey.directive';
+import { camps } from "../app/components/camps/camps.directive"
+import { FirebaseFactory } from "./components/camps/camp.service";
 
 declare var malarkey: any;
 declare var moment: moment.MomentStatic;
@@ -16,7 +18,7 @@ module kendoPlaygroundTs {
   'use strict';
 
   angular.module('kendoPlaygroundTs', [ 'ngCookies', 'ngSanitize', 'ngMessages',
-    'ngAria', 'ngResource', 'ui.router', 'kendo.directives'])
+    'ngAria', 'ngResource', 'ui.router', 'kendo.directives', 'firebase'])
     .constant('malarkey', malarkey)
     .constant('moment', moment)
     .config(config)
@@ -24,7 +26,9 @@ module kendoPlaygroundTs {
     .run(runBlock)
     .service('githubContributor', GithubContributor)
     .service('webDevTec', WebDevTecService)
+    .factory('FirebaseFactory', FirebaseFactory)
     .controller('MainController', MainController)
     .directive('acmeNavbar', acmeNavbar)
-    .directive('acmeMalarkey', acmeMalarkey);
+    .directive('acmeMalarkey', acmeMalarkey)
+    .directive('camps', camps);
 }
